@@ -1,6 +1,10 @@
-export const home = (req, res) => res.send("home");
-export const articles = (req, res) => res.send("articles");
-export const articlesDetail = (req, res) => res.send("articlesDetail");
-export const upload = (req, res) => res.send("upload");
-export const editArticles = (req, res) => res.send("editArticles");
-export const deleteArticles = (req, res) => res.send("deleteArticles");
+import { articles } from "../sampleData";
+import routes from "../routes";
+
+export const home = (req, res) => res.render("home", { articles });
+export const articleDetail = (req, res) => res.render("articleDetail");
+export const upload = (req, res) => res.render("upload");
+export const editArticles = (req, res) => res.render("editArticle");
+export const deleteArticles = (req, res) => {
+  res.redirect(routes.home);
+};

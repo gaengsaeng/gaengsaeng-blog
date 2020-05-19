@@ -1,0 +1,10 @@
+mixin articleBlock(article = {})
+    .article-container
+        .articleBlock
+            a(href=routes.articleDetail(article.id))
+                h2.articleBlock__title= article.title
+            each tag in article.tags
+                i.fas.fa-hashtag
+                span.articleBlock__tags= tag  
+            span.articleBlock__likes= article.likes
+            h5.articleBlock__description= article.description

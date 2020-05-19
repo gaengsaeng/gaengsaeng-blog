@@ -1,0 +1,14 @@
+extends base
+include mixins/articleBlock
+
+block content
+    .articles
+        each item in articles
+            +articleBlock({
+                id: item.id,
+                title: item.title,
+                description:item.description,
+                contents: item.contents, 
+                tags: item.tags,
+                likes: item.likes,
+            })

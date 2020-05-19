@@ -10,8 +10,8 @@ const LOGOUT = "/logout";
 const ARTICLES = "/articles";
 const UPLOAD = "/upload";
 const ARTICLES_DETAIL = "/:id";
-const EDIT_ARTICLES = "/:id/edit";
-const DELETE_ARTICLES = "/:id/delete";
+const EDIT_ARTICLE = "/:id/edit";
+const DELETE_ARTICLE = "/:id/delete";
 
 const routes = {
   home: HOME,
@@ -20,9 +20,15 @@ const routes = {
   logout: LOGOUT,
   articles: ARTICLES,
   upload: UPLOAD,
-  articlesDetail: ARTICLES_DETAIL,
-  editArticles: EDIT_ARTICLES,
-  deleteArticles: DELETE_ARTICLES,
+  articleDetail: (id) => {
+    if (id) {
+      return `/articles/${id}`;
+    } else {
+      return ARTICLES_DETAIL;
+    }
+  },
+  editArticles: EDIT_ARTICLE,
+  deleteArticles: DELETE_ARTICLE,
 };
 
 export default routes;

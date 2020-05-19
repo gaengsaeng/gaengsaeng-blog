@@ -1,0 +1,27 @@
+nav.navbar
+    .navbar--home
+        a(href=routes.home)
+            h2 HOME
+    .navbar--search
+        .form-container
+            form(action="/", method = "post")
+                input(type = "text", name = "term", placeholder = "search by hashtags")
+                <button type="submit" class="btn btn-success">
+                    <i class="fas fa-search"></i>
+                </button>
+    .navbar--icons
+        ul 
+            li
+                a(href=routes.login id ="create-article-icon") Log in
+            li
+                a(href=routes.upload id ="create-article-icon")
+                    i.fas.fa-pen
+            li
+                a(href="https://github.com/gaengsaeng" id ="move-to-github-icon")
+                    i.fab.fa-github
+            li
+                a(href="https://www.youtube.com/channel/UCaHAgEu0_6ylZt1mUXFUXoA?view_as=subscriber" id = "move-to-youtube-icon")
+                    i.fab.fa-youtube
+            li
+                a(href="#" id = "show-tags-icon")
+                    i.fas.fa-hashtag s
